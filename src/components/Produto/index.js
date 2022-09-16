@@ -1,9 +1,8 @@
 import { Container } from './styles';
 import { memo } from 'react';
-import { IconButton } from '@material-ui/core';
-import AddIcon from '@material-ui/icons/Add';
-import RemoveIcon from '@material-ui/icons/Remove';
-
+import { IconButton } from '@mui/material';
+import AddIcon from '@mui/icons-material/Add';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 function Produto({
   nome,
@@ -27,7 +26,7 @@ function Produto({
           <IconButton
             color="secondary"
           >
-            <RemoveIcon />
+            <DeleteIcon />
           </IconButton>
           <IconButton>
             <AddIcon />

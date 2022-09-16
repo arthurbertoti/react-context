@@ -1,5 +1,5 @@
 import { Button, Snackbar, InputLabel } from '@mui/material';
-import MuiAlert from '@material-ui/lab/Alert';
+import MuiAlert from '@mui/material/Alert';
 import { useState } from 'react';
 import { Container, Voltar, TotalContainer, PagamentoContainer} from './styles';
 

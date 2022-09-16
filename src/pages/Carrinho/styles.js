@@ -1,6 +1,7 @@
 import { FormControl } from '@mui/material';
 import styled from 'styled-components';
-import { IconButton, ArrowBackIcon } from '@mui/icons-material';
+import { IconButton } from '@mui/material';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 const titleGray = '#464646';
 
 export const Container = styled.main`
