@@ -10,9 +10,12 @@ import {
   InputAdornment
 } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import { UsuarioContext } from 'commom/context/Usuario';
+import { useContext } from 'react';
 
-function Login({ nome, setNome, saldo, setSaldo }) {
+function Login() {
   const navigate = useNavigate();
+  const { nome, setNome, saldo, setSaldo } = useContext(UsuarioContext);
   return (
     <Container>
       <Titulo>
@@ -46,7 +49,7 @@ function Login({ nome, setNome, saldo, setSaldo }) {
       <Button
         variant="contained"
         color="primary"
-        onClick={() => { navigate("/feira")}}
+        onClick={() => { navigate("/feira") }}
       >
         Avançar
       </Button>
