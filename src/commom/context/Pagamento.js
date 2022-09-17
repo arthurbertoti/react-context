@@ -18,7 +18,7 @@ export const PagamentoProvider = ({ children }) => {
         id: 3
     }, {
         nome: 'Crediário',
-        juros: 5,
+        juros: 1.5,
         id: 4
     }];
     const [formaPagamento, setFormaPagamento] = useState(tiposPagamento[0]);

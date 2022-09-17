@@ -19,7 +19,9 @@ function Router() {
                 <Route exact path="/feira" element={
                     <UsuarioProvider >
                         <CarrinhoProvider>
-                            <Feira />
+                            <PagamentoProvider>
+                                <Feira />
+                            </PagamentoProvider>
                         </CarrinhoProvider>
                     </UsuarioProvider>
                 } />
