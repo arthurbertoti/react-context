@@ -4,6 +4,7 @@ import Login from "pages/Login";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { UsuarioProvider } from 'commom/context/Usuario';
 import { CarrinhoProvider } from 'commom/context/Carrinho';
+import { PagamentoProvider } from "commom/context/Pagamento";
 
 
 function Router() {
@@ -25,7 +26,9 @@ function Router() {
                 <Route exact path="/carrinho" element={
                     <UsuarioProvider >
                         <CarrinhoProvider>
-                            <Carrinho />
+                            <PagamentoProvider>
+                                <Carrinho />
+                            </PagamentoProvider>
                         </CarrinhoProvider>
                     </UsuarioProvider>
                 } />
