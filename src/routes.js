@@ -3,6 +3,7 @@ import Feira from "pages/Feira";
 import Login from "pages/Login";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { UsuarioProvider } from 'commom/context/Usuario';
+import { CarrinhoProvider } from 'commom/context/Carrinho';
 
 
 function Router() {
@@ -16,7 +17,9 @@ function Router() {
                 } />
                 <Route exact path="/feira" element={
                     <UsuarioProvider >
-                        <Feira />
+                        <CarrinhoProvider>
+                            <Feira />
+                        </CarrinhoProvider>
                     </UsuarioProvider>
                 } />
                 <Route exact path="/carrinho" element={<Carrinho />} />

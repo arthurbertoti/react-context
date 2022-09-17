@@ -2,7 +2,8 @@ import { Container } from './styles';
 import { memo } from 'react';
 import { IconButton } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
-import DeleteIcon from '@mui/icons-material/Delete';
+import RemoveIcon from '@mui/icons-material/Remove';
+import { useCarrinhoContext } from 'commom/context/Carrinho';
 
 function Produto({
   nome,
@@ -11,29 +12,36 @@ function Produto({
   valor,
   unidade
 }) {
+
+  const { carrinho, adicionarProduto, removerProduto } = useCarrinhoContext();
+  const produtoNoCarrinho = carrinho.find(itemDoCarrinho => itemDoCarrinho.id === id);
   return (
-      <Container>
-        <div>
-          <img
-            src={`/assets/${foto}.png`}
-            alt={`foto de ${nome}`}
-          />
-          <p>
-            {nome} - R$ {valor?.toFixed(2)} <span>Kg</span>
-          </p>
-        </div>
-        <div>
-          <IconButton
-            color="secondary"
-          >
-            <DeleteIcon />
-          </IconButton>
-          <IconButton>
-            <AddIcon />
-          </IconButton>
-        </div>
-      </Container>
+    <Container>
+      <div>
+        <img
+          src={`/assets/${foto}.png`}
+          alt={`foto de ${nome}`}
+        />
+        <p>
+          {nome} - R$ {valor?.toFixed(2)} <span>Kg</span>
+        </p>
+      </div>
+      <div>
+        <IconButton
+          color="secondary"
+          onClick={() => removerProduto(id)}
+        >
+          <RemoveIcon />
+        </IconButton>
+        {produtoNoCarrinho?.quantidade || 0}
+        <IconButton
+          color='primary'
+          onClick={() => adicionarProduto({ nome, foto, id, valor })}
+        >
+          <AddIcon />
+        </IconButton>
+      </div>
+    </Container>
   )
 }
-
 export default memo(Produto)
