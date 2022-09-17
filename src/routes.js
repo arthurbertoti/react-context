@@ -22,7 +22,13 @@ function Router() {
                         </CarrinhoProvider>
                     </UsuarioProvider>
                 } />
-                <Route exact path="/carrinho" element={<Carrinho />} />
+                <Route exact path="/carrinho" element={
+                    <UsuarioProvider >
+                        <CarrinhoProvider>
+                            <Carrinho />
+                        </CarrinhoProvider>
+                    </UsuarioProvider>
+                } />
             </Routes>
         </BrowserRouter>
     )
